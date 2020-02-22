@@ -1,12 +1,13 @@
 import React from 'react';
 import Url from './components/Url'
+import Display from './components/Display';
  import './App.css';
 
 function App() {
 return(
   <div>
-    <Url >
-    </Url>
+    <Url />
+    <Display />
   </div>
 )
 }
