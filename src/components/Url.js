@@ -14,17 +14,21 @@ class Url extends React.Component {
           [e.target.name]: e.target.value
         });
       }
-      addUrl = e => {
+
+
+      addUrl = async (e) => {
+        e.preventDefault();
         const db = firebase.firestore();
         db.settings({
         timestampsInSnapshots: true
   });
-        const userRef = db.collection("users").add({
+        const userRef = await db.collection("users").add({
         url: this.state.url
   });  
-        this.setState({
-        url:""
-  });
+      console.log('userred', userRef)
+            this.setState({
+            url:""
+      });
         };
                 render() {
             return (
